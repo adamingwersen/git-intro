@@ -40,10 +40,12 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Git 2.15</h1>
+					<h1>An introduction to Git</h1>
 					<h3>Open source version control</h3>
 					<p>
 						<small>Slides by <a href="github.com/adamingwersen">Adam Ingwersen</a></small>
+						<hr>
+						<small>Powered by <a href="https://github.com/hakimel/reveal.js">reveal.js</a></small>
 					</p>	
 					</section>
 				<section>
@@ -154,12 +156,6 @@ git config --list
 					<p>For a more detailed explanation of Git config, consult <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">this guide</a></p>
 				</section>
 
-				<section>	
-					<p>When a repository has been initialized and configured, you may wish to add some files to it</p>
-					<p>This you can do as usual - no dark magic there</p> 
-					<p>Let's create some files:</p>
-					<img src="images/1-file.png", alt="files">
-				</section>
 
 				<section>
 					<h3>So, how does Git work?(3 - changes)</h3>
@@ -181,8 +177,54 @@ git config --list
 							<img src="images/git_staging_commit.png", alt="Diagram", style="border: 0;">
 						</section>
 				</section>
-				<section>
 
+				<!-- DEMO -->
+				<section>
+					<section>	
+						<p>When a repository has been initialized and configured, you may wish to add some files to it</p>
+						<p>This you can do as usual - no dark magic there</p> 
+						<p>Let's create some files:</p>
+						<img src="images/1-file.png", alt="files">
+					</section>	
+					<section>
+						<p>We can inspect the current <i>status</i> of the <i>repository</i> by writing</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git status
+					</code></pre>
+					<section>
+						<p>We see, that the newly created set of files are untracked, as Git has not yet seen them before</p>
+						<img src="images/2-file.png", alt="untracked">
+					</section>
+					</section>
+					<section>
+						<p>Git will not track empty files or directories/folders</p>
+						<p>So let's put some arbitrary text into some of the files and <i>add</i> the changes for <i>staging</i></p>
+						<pre><code class="hljs" data-trim contenteditable>
+//you also could do this by opening the file
+echo "#hello" >> 1-i.py 2-am.R 3-not.sql 
+git add 1-i.py
+					</code></pre>
+					<p><small>Note, we're only adding one file</small></p>
+					</section>
+					<section>
+						<p>Having now added one file for staging, we can see, that Git tells us, it's ready for <i>commit</i></p> 
+						<img src="images/3-file.png", "tracked 1">
+					</section>
+					<section>
+						<p>If you would like to <i>add</i> all the changes made in the directory, you can do</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git add .
+						</code></pre>
+						<p>Note, that this will <i>add</i> all files in all sub-directories</p>
+					
+					</section>
+				</section>
+				<!-- OMED -->
+					
+					
+				<section>
+					<h2>What not to do</h2>
+					<img src="images/gitrekt.jpg", alt="gitrekt", style="border: 0;">
 				</section>
 
 			</div>
