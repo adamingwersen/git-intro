@@ -200,11 +200,11 @@ git status
 						<p>Git will not track empty files or directories/folders</p>
 						<p>So let's put some arbitrary text into some of the files and <i>add</i> the changes for <i>staging</i></p>
 						<pre><code class="hljs" data-trim contenteditable>
-//you also could do this by opening the file
+//you also could do this by opening the files in an editor
 echo "#hello" >> 1-i.py 2-am.R 3-not.sql 
 git add 1-i.py
 					</code></pre>
-					<p><small>Note, we're only adding one file</small></p>
+					<p><small>Note, we're only adding one file out of the 3 modified ones</small></p>
 					</section>
 					<section>
 						<p>Having now added one file for staging, we can see, that Git tells us, it's ready for <i>commit</i></p> 
@@ -215,8 +215,21 @@ git add 1-i.py
 						<pre><code class="hljs" data-trim contenteditable>
 git add .
 						</code></pre>
-						<p>Note, that this will <i>add</i> all files in all sub-directories</p>
-					
+						<p><small>Note, that this will <i>add</i> all files in all sub-directories</small></p>	
+					</section>
+					<section>
+						<p>Having <i>added</i> a modified file, we're now ready to commit to the changes made</p>
+						<p>We've got to remember to attach a comment, indicating, what the purpose of the change was</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git commit -m "Added comment to .py-file or testing purposes"
+						</code></pre>
+					</section>
+					<section>
+						<h3>A quick remark about commits</h3>
+						<p><i>commits</i> rely on relatively frequent usage</p>
+						<p>It's inteded use is: <i>commit</i> at any time, where you've made changes that alter the functionality of your code</p>
+						<p>A <i>commit</i> is the only information conveyed to 3rd-party modifiers as to what was done and why</p>
+						<p>Keep them brief, precise and frequent</p>
 					</section>
 				</section>
 				<!-- OMED -->
