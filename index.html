@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>An introduction to Git</title>
+
+		<meta name="description" content="Optimizing collaboration and coding workflow">
+		<meta name="author" content="Adam Frederik Ingwersen Linnemann">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+	var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+			link.type = 'text/css';
+				link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+					document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+				<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Git 2.15</h1>
+					<h3>Open source version control</h3>
+					<p>
+						<small>Slides by <a href="github.com/adamingwersen">Adam Ingwersen</a></small>
+					</p>	
+					</section>
+				<section>
+					<h2> Motivation</h2>
+					<ul>
+						<li>Git is used (primarily) for coding projects</li>
+						<li>It enables multiple users to track their contributions</li>
+						<li>It allows for easy versioning of projects</li>
+						<li>With Git, projects can be branched to yield multiple new projects</li>
+						<li>Git ensures, that all code changes are documented - if used properly</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>When to use Git</h2>
+					<p> You'll typically want to use a version control tool, such as Git, when cooperation on projects or when building larger projects by yourself. </p>
+					<p> Git is also a very useful tool for handing over projects, as it allows external readers to understand how the project was built, and what changes were made as the project progressed. </p>
+				</section>
+
+				<section>
+					<h2>Other benefits</h2>
+					<ul>
+						<li> You can host your code online and import your environment to a new machine</li>
+						<li> Git can extrapolate the exact changes made and highlight these, so you wont have to read thousands of lines of code to find changes </li>
+						<li> Many tools are built around Git, which allow for automatic runing, testing and notifications. </li>
+						<li> Process flows can be set up so that changes to the code are reciprocated to multiple machines. Handy for production </li>
+				</section>
+
+				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+					<h2>Amazing...Right?</h2>
+				</section>
+
+				<section>
+					<h2> Git != GitHub </h2>
+					<p> Git is a free open source tool, which GitHub (a company) incorporates into their servers. GitHub thus functions as a platform for people to use Git more freely. This is similar to GitLab. Each have pros and cons - but essentially do the same: host servers that allow programmers to put their code online for sharing and collaboration. Think of it as you would services like Dropbox. </p>
+				</section>
+
+				<section>
+					<h3>So, how does Git work? (1 - setup)</h3>
+					<p>Git revolves around <i>repositories</i> which lie on top of <i>directories</i> - in Windows, you'll know them as <i>folders</i>
+					<p>Once a <i>repository</i> has been <i>initialized</i>, it should be configured to use your credentials and typically a Git-enabled server to send the code to</p>
+					<p>Git does not require a Git-enabled server such as GitHub to work or be useful - you can use Git locally, if you so desire</p>
+				</section>
+
+				<section>
+					<h3>So, how does Git work? (2 - setup)</h3>
+					<p>When an empty <i>repository</i> is <i>initialized</i>, a hidden <b>.git</b> folder created </p>
+					<p>This folder contains a lot of things, that you shouldn't worry about - except the <b>config</b> file. 
+					<p> The <b>config</b> file contains information about the user, destination server and other configuration settings such as default behaviour of git in the <i>repository</i>.
+				</section>
+
+				<!--DEMO 1 -->
+				<section>
+					<section>
+						<h2>Let's see that in action</h2>
+						<p>I have an empty folder:</p>
+						<br>
+						<img src="images/0-dir.png", alt="Empty Directory">
+					</section>
+					<section>
+						<p>I use the following command to initialize a new git repository </p>
+					<pre><code class="hljs" data-trim contenteditable>
+git init
+					</code></pre>
+					<break>
+					<break>
+					<hr>
+					<p><small>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a></small></p>
+					</section>
+					<section>
+						<p>...and now there we have the <b>.git</b> folder: </p>
+						<img src="images/2-dir.png", alt="Git init">
+					</section>
+					<section>
+						<p>...which contains:</p>
+						<img src="images/3-dir.png", alt=".git folder">
+					</section>
+					<section>
+						<p>Having a look at the <b>config</b> file</p>
+						<img src="images/4-dir.png", alt="empty config file">
+						<p>... there's not a lot in here </p>
+					</section>
+					<section>
+						<p>We can start adding to the <b>config</b> file by modifying it directly</p>
+						<p> ...or we can use Git's built-in tools for this:</p>
+					<pre><code class="hljs" data-trim contenteditable>
+git config user.name "your name in quotes"
+git config user.email youremail@somemail.com
+					</code></pre>
+					<img src="images/5-dir.png", alt="gitconfig cmd">
+					</section>
+					<section>
+						<p>...and the <b>config</b> file has now been changed accordingly</p>
+						<img src="images/6-dir.png", alt="gitconfig sc">
+					</section>
+					<section>
+						<p>You can also use the following command to show the contents of the <b>config</b> file.</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git config --list
+					</code></pre>
+					</section>
+				</section>
+				<!-- OMED -->
+
+				<section>
+					<h2>Moving on</h2>
+					<p>We're going to take a more in-depth look at setting up server configuration later</p>	
+					<p>For a more detailed explanation of Git config, consult <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">this guide</a></p>
+				</section>
+
+				<section>	
+					<p>When a repository has been initialized and configured, you may wish to add some files to it</p>
+					<p>This you can do as usual - no dark magic there</p> 
+					<p>Let's create some files:</p>
+					<img src="images/1-file.png", alt="files">
+				</section>
+
+				<section>
+					<h3>So, how does Git work?(3 - changes)</h3>
+					<p>Git will help track new files as they are added and modified</p>
+					<p>Although, this requires that you actively tell git when to record the changes</p>
+					<p>In a sense, Git takes a snapshot of your <i>repository</i> when you tell it to</p>
+					<p>The information which is tracked is only the information which has changed - so you wont have much overhead</p>
+				</section>
+				<section>
+					<section>
+						<h3>So, how does Git work?(4 - changes)</h3>
+						<p>Git uses a <i>staging</i> and a <i>commitment</i> phase</p>
+						<p>In the <i>staging</i> phase, you tell Git which files to look for changes in</p>
+						<p>In the <i>commitment</i> phase you tell Git that you are prepared to <i>commit</i> to the changes and what you've done since last <i>commit</i></p>
+						<p>You can <i>stage</i> multiple times before <i>committing</i> to the changes</p>
+						</section>
+						<section data-transition="concave" data-background="#4d7e65", data-background-transition="zoom">
+							<h3>The Local Git Workflow</h3>
+							<img src="images/git_staging_commit.png", alt="Diagram", style="border: 0;">
+						</section>
+				</section>
+				<section>
+
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
