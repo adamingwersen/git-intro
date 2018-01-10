@@ -22,11 +22,11 @@
 
 		<!-- Printing and PDF exports -->
 		<script>
-	var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
 			link.type = 'text/css';
-				link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-					document.getElementsByTagName( 'head' )[0].appendChild( link );
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 				<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -75,7 +75,7 @@
 				</section>
 
 				<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-					<h2>Amazing...Right?</h2>
+					<h1>Amazing...Right?</h1>
 				</section>
 
 				<section>
@@ -85,7 +85,7 @@
 
 				<section>
 					<h3>So, how does Git work? (1 - setup)</h3>
-					<p>Git revolves around <i>repositories</i> which lie on top of <i>directories</i> - in Windows, you'll know them as <i>folders</i>
+					<p>Git revolves around <i>repositories</i>, <i>repo</i> for short, which lie on top of <i>directories</i> - in Windows, you'll know them as <i>folders</i>
 					<p>Once a <i>repository</i> has been <i>initialized</i>, it should be configured to use your credentials and typically a Git-enabled server to send the code to</p>
 					<p>Git does not require a Git-enabled server such as GitHub to work or be useful - you can use Git locally, if you so desire</p>
 				</section>
@@ -221,7 +221,7 @@ git add .
 						<p>Having <i>added</i> a modified file, we're now ready to commit to the changes made</p>
 						<p>We've got to remember to attach a comment, indicating, what the purpose of the change was</p>
 						<pre><code class="hljs" data-trim contenteditable>
-git commit -m "Added comment to .py-file for testing purposes"
+git commit -m "Add comment to .py-file for testing purposes"
 						</code></pre>
 					</section>
 					<section>
@@ -241,10 +241,11 @@ git commit -m "Added comment to .py-file for testing purposes"
 						<p><strike>quick fix</strike></p>
 						<p><strike>working on feature</strike></p>
 						<p><strike>changed line 32, 11, 93 and 199</strike></p>
+						<hr>
 						<p><small>More can be found in the <a href="http://www.codelord.net/2015/03/16/bad-commit-messages-hall-of-shame/">commit messages hall of shame</a></small></p>
 					</section>
 					<section>
-						<h2>The good commit mesage</h2>
+						<h2>The good commit message</h2>
 						<ul>
 							<li>Tells, <b>why</b> the change was made</li>
 							<li>Briefly describes <b>what</b> was done</li>
@@ -252,6 +253,7 @@ git commit -m "Added comment to .py-file for testing purposes"
 							<li>Uses newlines</li>
 							<li>Preferrably in present tense/imperative mood</li>
 						</ul>
+						<hr>
 						<p><small>There are a multitude of guides out there, but I really liked <a href="https://chris.beams.io/posts/git-commit/">this one by a guy named Chris</a></small></p>
 					</section>
 				</section>
@@ -276,7 +278,32 @@ git commit -m "Added comment to .py-file for testing purposes"
 						<li>Branching and versioning</li>
 					</ul>
 					<hr>
-					<p><small>In truth, Git has an exhaustive set of features to learn - but we're focusing on the fundementals</small></p>
+					<p><small>In truth, Git has an exhaustive set of <a href="https://git-scm.com/docs">features to learn</a> - but we're focusing on the fundementals</small></p>
+				</section>
+				<section>
+					<section>
+						<h2>Understand the repo</h2>
+						<p>Git provides a set of tools to analyse the work you've done so far</p>
+						<p>These tools are useful to some - whilst others prefer to inspect their work using e.g. <a href="github.com">github.com</a></p> 	
+					</section>
+					<section>
+						<h2>Understand the repo</h2>
+						<p>Git stamps each commit with an ID</p>
+						<p>A Git commit ID is actually a <b>SHA-1 hash</b> that contains important information about the contents of the file, commit date, user, etc.</p>
+						<p>We're not going to use this - but there's meaningful information in the ID</p>
+					</section>
+					<section>
+						<h2>Understand the repo </h2>
+						<p>You can have the repo 'history' presented with <i>git log</i></p>
+						<pre><code class="hljs" data-trim contenteditable>
+git log
+//or
+git log --oneline
+						</code></pre>
+						<hr>
+						<p><small>This will present all previous <i>commits</i> by their ID, date, user and <i>commit</i> message</small></p>
+						<p><small>Adding the  '--oneline' flag compacts the information presented</small></p>
+					</section>
 				</section>
 
 
@@ -285,11 +312,11 @@ git commit -m "Added comment to .py-file for testing purposes"
 					<br><br><br>
 					<br><br><br>
 					<h1>GIT MERGE!</h1>
-					</section>
+				</section>
 					
-				<section data-transition="zoom", >
-					<h2>What not to do</h2>
-					<img src="images/gitrekt.jpg", alt="gitrekt", style="border: 0;">
+				<section data-transition="zoom", id="fragments">	
+					<b><p><span class="fragment">Don't </span><span class="fragment">ever </span><span class="fragment">do </span><span class="fragment">this! </span></p></b>
+					<img class="fragment", src="images/gitrekt.jpg", alt="gitrekt", style="border: 0;">
 				</section>
 
 			</div>
@@ -308,7 +335,7 @@ git commit -m "Added comment to .py-file for testing purposes"
 				history: true,
 				center: true,
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+				transition: 'zoom', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
