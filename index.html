@@ -61,7 +61,7 @@
 
 				<section>
 					<h2>When to use Git</h2>
-					<p> You'll typically want to use a version control tool, such as Git, when cooperation on projects or when building larger projects by yourself. </p>
+					<p> You'll typically want to use a version control tool, such as Git, when cooperating on projects or when building larger projects by yourself. </p>
 					<p> Git is also a very useful tool for handing over projects, as it allows external readers to understand how the project was built, and what changes were made as the project progressed. </p>
 				</section>
 
@@ -103,7 +103,7 @@
 						<h2>Let's see that in action</h2>
 						<p>I have an empty folder:</p>
 						<br>
-						<img src="images/0-dir.png", alt="Empty Directory">
+						<img src="images/0-dir.png", alt="Empty Directory", style="border: 0;">
 					</section>
 					<section>
 						<p>I use the following command to initialize a new git repository </p>
@@ -117,15 +117,15 @@ git init
 					</section>
 					<section>
 						<p>...and now there we have the <b>.git</b> folder: </p>
-						<img src="images/2-dir.png", alt="Git init">
+						<img src="images/2-dir.png", alt="Git init", style="border: 0;">
 					</section>
 					<section>
 						<p>...which contains:</p>
-						<img src="images/3-dir.png", alt=".git folder">
+						<img src="images/3-dir.png", alt=".git folder", style="border: 0;">
 					</section>
 					<section>
 						<p>Having a look at the <b>config</b> file</p>
-						<img src="images/4-dir.png", alt="empty config file">
+						<img src="images/4-dir.png", alt="empty config file", style="border: 0;">
 						<p>... there's not a lot in here </p>
 					</section>
 					<section>
@@ -135,11 +135,11 @@ git init
 git config user.name "your name in quotes"
 git config user.email youremail@somemail.com
 					</code></pre>
-					<img src="images/5-dir.png", alt="gitconfig cmd">
+					<img src="images/5-dir.png", alt="gitconfig cmd", style="border: 0;">
 					</section>
 					<section>
 						<p>...and the <b>config</b> file has now been changed accordingly</p>
-						<img src="images/6-dir.png", alt="gitconfig sc">
+						<img src="images/6-dir.png", alt="gitconfig sc", style="border: 0;">
 					</section>
 					<section>
 						<p>You can also use the following command to show the contents of the <b>config</b> file.</p>
@@ -153,7 +153,8 @@ git config --list
 				<section>
 					<h2>Moving on</h2>
 					<p>We're going to take a more in-depth look at setting up server configuration later</p>	
-					<p>For a more detailed explanation of Git config, consult <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">this guide</a></p>
+					<hr>
+					<p><small>For a more detailed explanation of <i>git config</i>, consult <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">this guide</a></small></p>
 				</section>
 
 
@@ -161,8 +162,7 @@ git config --list
 					<h3>So, how does Git work?(3 - changes)</h3>
 					<p>Git will help track new files as they are added and modified</p>
 					<p>Although, this requires that you actively tell git when to record the changes</p>
-					<p>In a sense, Git takes a snapshot of your <i>repository</i> when you tell it to</p>
-					<p>The information which is tracked is only the information which has changed - so you wont have much overhead</p>
+					<p>In a sense, Git takes a snapshot of your <i>repository</i> when you tell it to</p>	
 				</section>
 				<section>
 					<section>
@@ -170,7 +170,7 @@ git config --list
 						<p>Git uses a <i>staging</i> and a <i>commitment</i> phase</p>
 						<p>In the <i>staging</i> phase, you tell Git which files to look for changes in</p>
 						<p>In the <i>commitment</i> phase you tell Git that you are prepared to <i>commit</i> to the changes and what you've done since last <i>commit</i></p>
-						<p>You can <i>stage</i> multiple times before <i>committing</i> to the changes</p>
+						<p>You can <i>add</i> to <i>staging</i> multiple times before <i>committing</i> to the changes</p>
 						</section>
 						<section data-transition="concave" data-background="#4d7e65", data-background-transition="zoom">
 							<h3>The Local Git Workflow</h3>
@@ -184,7 +184,7 @@ git config --list
 						<p>When a repository has been initialized and configured, you may wish to add some files to it</p>
 						<p>This you can do as usual - no dark magic there</p> 
 						<p>Let's create some files:</p>
-						<img src="images/1-file.png", alt="files">
+						<img src="images/1-file.png", alt="files", style="border: 0;">
 					</section>	
 					<section>
 						<p>We can inspect the current <i>status</i> of the <i>repository</i> by writing</p>
@@ -193,36 +193,101 @@ git status
 					</code></pre>
 					<section>
 						<p>We see, that the newly created set of files are untracked, as Git has not yet seen them before</p>
-						<img src="images/2-file.png", alt="untracked">
+						<img src="images/2-file.png", alt="untracked", style="border: 0;">
 					</section>
 					</section>
 					<section>
 						<p>Git will not track empty files or directories/folders</p>
 						<p>So let's put some arbitrary text into some of the files and <i>add</i> the changes for <i>staging</i></p>
 						<pre><code class="hljs" data-trim contenteditable>
-//you also could do this by opening the file
+//you also could do this by opening the files in an editor
 echo "#hello" >> 1-i.py 2-am.R 3-not.sql 
 git add 1-i.py
 					</code></pre>
-					<p><small>Note, we're only adding one file</small></p>
+					<p><small>Note, we're only adding one file out of the 3 modified ones</small></p>
 					</section>
 					<section>
 						<p>Having now added one file for staging, we can see, that Git tells us, it's ready for <i>commit</i></p> 
-						<img src="images/3-file.png", "tracked 1">
+						<img src="images/3-file.png", "tracked 1", style="border: 0;">
 					</section>
 					<section>
 						<p>If you would like to <i>add</i> all the changes made in the directory, you can do</p>
 						<pre><code class="hljs" data-trim contenteditable>
 git add .
 						</code></pre>
-						<p>Note, that this will <i>add</i> all files in all sub-directories</p>
-					
+						<p><small>Note, that this will <i>add</i> all files in all sub-directories</small></p>	
+					</section>
+					<section>
+						<p>Having <i>added</i> a modified file, we're now ready to commit to the changes made</p>
+						<p>We've got to remember to attach a comment, indicating, what the purpose of the change was</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git commit -m "Added comment to .py-file for testing purposes"
+						</code></pre>
+					</section>
+					<section>
+						<h3>A quick remark about commits</h3>
+						<p><i>commits</i> rely on relatively frequent usage</p>
+						<p>It's inteded use is: <i>commit</i> at any time, where you've made changes that alter the functionality of your code</p>
+						<p>A <i>commit</i> is the only information conveyed to 3rd-party modifiers as to what was done and why</p>
+						<p>Keep them brief, precise and frequent</p>
+					</section>
+					<section data-transition="concave" , data-background-transition="zoom">
+						<h2>Commit messages are important</h2>
+						<img src="images/git_commit.png", style="border: 0;">
+					</section>
+					<section>
+						<h2>Bad commit messages</h2>
+						<p><strike>iadwadjawlawldjkj</strike></p>
+						<p><strike>quick fix</strike></p>
+						<p><strike>working on feature</strike></p>
+						<p><strike>changed line 32, 11, 93 and 199</strike></p>
+						<p><small>More can be found in the <a href="http://www.codelord.net/2015/03/16/bad-commit-messages-hall-of-shame/">commit messages hall of shame</a></small></p>
+					</section>
+					<section>
+						<h2>The good commit mesage</h2>
+						<ul>
+							<li>Tells, <b>why</b> the change was made</li>
+							<li>Briefly describes <b>what</b> was done</li>
+							<li>Max 50 characters</li>
+							<li>Uses newlines</li>
+							<li>Preferrably in present tense/imperative mood</li>
+						</ul>
+						<p><small>There are a multitude of guides out there, but I really liked <a href="https://chris.beams.io/posts/git-commit/">this one by a guy named Chris</a></small></p>
 					</section>
 				</section>
 				<!-- OMED -->
-					
-					
+
 				<section>
+					<h1>So, now i know git, right?</h1>
+				</section>
+				<section data-background="https://media.giphy.com/media/26tn8SCj1y4QgATnO/giphy.gif">	
+				</section>
+				
+				<section>
+					<h2>Those were the very basics</h2>
+					<p>The four commands shown above; <i>git init</i>, <i>git add</i>, <i>git status</i> and <i>git commit</i>  are, alongside <i>git config</i>, the commands you'll typically need in a workflow - if you're working locally.</p>	
+				</section>
+
+				<section>
+					<h2>There's still a lot to learn</h2>
+					<ul>
+						<li>Using git's built in tools to understand changelogs etc.</li>
+						<li>Connecting Git to networks and online services</li>
+						<li>Branching and versioning</li>
+					</ul>
+					<hr>
+					<p><small>In truth, Git has an exhaustive set of features to learn - but we're focusing on the fundementals</small></p>
+				</section>
+
+
+
+				<section data-background="https://media.giphy.com/media/X144Ov9UbFUZO/giphy.gif">
+					<br><br><br>
+					<br><br><br>
+					<h1>GIT MERGE!</h1>
+					</section>
+					
+				<section data-transition="zoom", >
 					<h2>What not to do</h2>
 					<img src="images/gitrekt.jpg", alt="gitrekt", style="border: 0;">
 				</section>
