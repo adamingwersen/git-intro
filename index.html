@@ -289,7 +289,8 @@ git commit -m "Add comment to .py-file for testing purposes"
 					<section>
 						<h3>Understand the repo</h3>
 						<p>Git stamps each commit with an ID</p>
-						<p>A Git commit ID is actually a <b>SHA-1 hash</b> that contains important information about the contents of the file, commit date, user, etc.</p>
+						<p>A Git commit ID is actually constructed from a <b>SHA-1 hash</b> that contains important information about the contents of the file, commit date, user, etc.</p>
+						<p>This hash is in a sense, the <i>long</i> version of the <i>commit ID</i></p>
 						<p>We're not going to use this - but there's meaningful information in the ID</p>
 					</section>
 					<section>
@@ -330,6 +331,25 @@ git diff [commit-id]
 						<p><small>In this commit, I deleted a line i <b>1-i.py</b>, marked with <font color="red">- and red</font></small></p>
 						<p><small>I also added 5 lines of generic python code, marked with <font color="green">+ and green</font></small></p>
 					</section>
+					<section>
+					 	<p>If you want to inspect the repository or a particular <i>commit</i>, you can also use: </p>
+					 	<pre><code class="hljs" data-trim contenteditable>
+git show
+git show [commit-id]
+						</code></pre>
+					</section>
+					<section>
+					 <p>All these commands has a plethora of option-flags</p>
+					 <p>For example, it's possible to limit the view in terms of contributors, date or other criteria</p> 
+					 <hr>
+					 <p><small>You can always consult the <a href="https://git-scm.com/docs">documentation</a>, or use the <i>--help</i> flag for possible arguments and format</small></p>
+					 	<pre><code class="hljs" data-trim contenteditable>
+git diff --help
+						</code></pre>
+					</section>
+				</section>
+				<section>
+
 				</section>
 
 				<section data-background="https://media.giphy.com/media/X144Ov9UbFUZO/giphy.gif">
