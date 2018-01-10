@@ -91,6 +91,9 @@ body {
 .reveal b {
   font-weight: bold; }
 
+.reveal strike {
+	text-decoration-color: red;}
+
 .reveal em {
   font-style: italic; }
 
