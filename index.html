@@ -256,6 +256,32 @@ git commit -m "Add comment to .py-file for testing purposes"
 						<hr>
 						<p><small>There are a multitude of guides out there, but I really liked <a href="https://chris.beams.io/posts/git-commit/">this one by a guy named Chris</a></small></p>
 					</section>
+					<section>
+					 <h4>What if i want to undo what i <i>added</i></h4>
+					 <p>If you used <i>git add</i> and want to undo it, simply</p>
+						<pre><code class="hljs" data-trim contenteditable>
+//Undo for single file
+git reset [file]
+//Undo all
+git reset
+						</code></pre>
+					</section>
+					<section>
+					 <h4>What if i don't want to track a file?</h4>
+					 <p>Say hello to the <i>.gitignore</i> file</p> 
+					</section>
+					<section>
+					 <h4>What if i don't want to track a file?</h4>
+					 <p>This file is not created by default, but just create it</p>
+					 <p>In it, you can type a specific file - or file-format, you want Git to ignore</p>
+						<pre><code class="hljs" data-trim contenteditable>
+//In .gitignore
+//Particular file
+1-i.py
+//Particular file type
+*.py
+						</code></pre>
+					</section>
 				</section>
 				<!-- OMED -->
 
@@ -349,7 +375,82 @@ git diff --help
 					</section>
 				</section>
 				<section>
-
+				 <p>Ok, at this point you're familiar with the fundemental commands and tools you need for local development using Git</p>
+				 <br>
+				 <p>But you can do so much more with Git...</p>
+				</section>
+				<section data-background="images/netwrk.jpg" data-background-transition="fade">
+				 <h2>Git on networks</h2>
+				</section>
+				<section>
+				 <h2>Git on networks</h2>
+				 <p>Git can be deployed on servers on local networks, to function a bit like e.g. shared drives</p> 
+				 <p>Several online implementations host git-based services, e.g. GitHub</p>
+				 <p>This is where Git gets really interesting</p>
+				</section>
+				<section>
+				 <section>
+				 <p>In order for git to communicate with a server of any sort, we have to go back to the <i>config</i> file</p>
+				 <p>The <i>config</i> file can accomodate <i>remote</i> destinations for use when you want to update the local or remote contents of your <i>repo</i>
+				 <p>This will serve as the target to which the git client communicates with</i>
+				 </section>
+				 <section>
+					<h2>New repository?</h2>
+					<p>You will typically have to create the remote <i>repo</i> on the service where it should be hosted</p>
+					<p>On <a href="github.com">GitHub</a> you can (when logged in) click 'New Repository', name it and be on your way</p>
+				 </section>	
+				 <section>
+					<h2>New repository?</h2>
+					<p>You can add the destination of the remote repository via <i>HTTPS</i> or <i>SSH</i></p>
+					<p>In the case of <i>HTTPS</i>, a GitHub repo destination looks like</p>
+					 	<pre><code class="hljs" data-trim contenteditable>
+"https://github.com/username/repo-name.git"
+						</code></pre>
+				 </section>
+				 <section>
+					<h2>New repository?</h2>
+					<p>You can add that destination to your <i>config</i> file</p>
+					 	<pre><code class="hljs" data-trim contenteditable>
+git remote add origin https://github.com/username/repo-name.git
+						</code></pre>
+				 </section>
+				 <section>
+					<p>You're now ready to send whatever <i>repo</i> you have locally to GitHub</p>
+					<p>This is accomplished with the <i>git push</i> command</p>
+					<p>This command will <i>push</i> your latest <i>commit</i> to the remote destination</p>
+					 	<pre><code class="hljs" data-trim contenteditable>
+//First push
+git push -u origin master
+//All later pushes
+git push
+						</code></pre>
+				 </section>
+				 <section>
+					<h4>But I want to work a repository already created</h4>
+					<p>Let's say you want to help your colleague with her code</p>
+					<p>You simply <i>clone</i> the repository from the destination</p>
+					 	<pre><code class="hljs" data-trim contenteditable>
+git clone https://github.com/someuser/some-repo.git
+						</code></pre>
+					<hr>
+					<p><small>This will copy all files alongside Git history, <i>config</i> and <i>.gitignore</i> to your machine</small></p>
+					<p><small>From here, you can alter and then <i>push</i></small></p>
+				 </section>
+				 <section>
+					<p>There are cases, when you're collaborating or working on multiple machines, and the repository has been updated, and you need the latest changes on your machine</p>
+					<p>Here, you can use <i>git pull</i></p>
+					 	<pre><code class="hljs" data-trim contenteditable>
+git pull
+						</code></pre>
+					<hr>
+					<p><small>This will grab all changes made to the repository since the the latest push from that machine</small></p>
+				 </section>
+				</section>
+				<section>
+				 <p>Anytime you're collaborating on a project it's important to remember and <i>git pull</i> before you start working on the project</p>
+				 <br>
+				 <p>Inevitably, you'll forget it - and regret it... </p> 
+				 <p>Enter...</p>
 				</section>
 
 				<section data-background="https://media.giphy.com/media/X144Ov9UbFUZO/giphy.gif">
@@ -357,6 +458,8 @@ git diff --help
 					<br><br><br>
 					<h1>GIT MERGE!</h1>
 				</section>
+
+
 					
 				<section data-transition="zoom", id="fragments">	
 					<b><p><span class="fragment">Don't </span><span class="fragment">ever </span><span class="fragment">do </span><span class="fragment">this! </span></p></b>
