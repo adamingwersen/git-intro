@@ -49,7 +49,7 @@
 					</p>	
 					</section>
 				<section>
-					<h2> Motivation</h2>
+					<h3> Motivation</h3>
 					<ul>
 						<li>Git is used (primarily) for coding projects</li>
 						<li>It enables multiple users to track their contributions</li>
@@ -60,13 +60,13 @@
 				</section>
 
 				<section>
-					<h2>When to use Git</h2>
+					<h3>When to use Git</h3>
 					<p> You'll typically want to use a version control tool, such as Git, when cooperating on projects or when building larger projects by yourself. </p>
 					<p> Git is also a very useful tool for handing over projects, as it allows external readers to understand how the project was built, and what changes were made as the project progressed. </p>
 				</section>
 
 				<section>
-					<h2>Other benefits</h2>
+					<h3>Other benefits</h3>
 					<ul>
 						<li> You can host your code online and import your environment to a new machine</li>
 						<li> Git can extrapolate the exact changes made and highlight these, so you wont have to read thousands of lines of code to find changes </li>
@@ -79,7 +79,7 @@
 				</section>
 
 				<section>
-					<h2> Git != GitHub </h2>
+					<h3> Git != GitHub </h3>
 					<p> Git is a free open source tool, which GitHub (a company) incorporates into their servers. GitHub thus functions as a platform for people to use Git more freely. This is similar to GitLab. Each have pros and cons - but essentially do the same: host servers that allow programmers to put their code online for sharing and collaboration. Think of it as you would services like Dropbox. </p>
 				</section>
 
@@ -100,7 +100,7 @@
 				<!--DEMO 1 -->
 				<section>
 					<section>
-						<h2>Let's see that in action</h2>
+						<h3>Let's see that in action</h3>
 						<p>I have an empty folder:</p>
 						<br>
 						<img src="images/0-dir.png", alt="Empty Directory", style="border: 0;">
@@ -151,7 +151,7 @@ git config --list
 				<!-- OMED -->
 
 				<section>
-					<h2>Moving on</h2>
+					<h3>Moving on</h3>
 					<p>We're going to take a more in-depth look at setting up server configuration later</p>	
 					<hr>
 					<p><small>For a more detailed explanation of <i>git config</i>, consult <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">this guide</a></small></p>
@@ -232,11 +232,11 @@ git commit -m "Add comment to .py-file for testing purposes"
 						<p>Keep them brief, precise and frequent</p>
 					</section>
 					<section data-transition="concave" , data-background-transition="zoom">
-						<h2>Commit messages are important</h2>
+						<h3>Commit messages are important</h3>
 						<img src="images/git_commit.png", style="border: 0;">
 					</section>
 					<section>
-						<h2>Bad commit messages</h2>
+						<h3>Bad commit messages</h3>
 						<p><strike>iadwadjawlawldjkj</strike></p>
 						<p><strike>quick fix</strike></p>
 						<p><strike>working on feature</strike></p>
@@ -245,7 +245,7 @@ git commit -m "Add comment to .py-file for testing purposes"
 						<p><small>More can be found in the <a href="http://www.codelord.net/2015/03/16/bad-commit-messages-hall-of-shame/">commit messages hall of shame</a></small></p>
 					</section>
 					<section>
-						<h2>The good commit message</h2>
+						<h3>The good commit message</h3>
 						<ul>
 							<li>Tells, <b>why</b> the change was made</li>
 							<li>Briefly describes <b>what</b> was done</li>
@@ -266,12 +266,12 @@ git commit -m "Add comment to .py-file for testing purposes"
 				</section>
 				
 				<section>
-					<h2>Those were the very basics</h2>
+					<h3>Those were the very basics</h3>
 					<p>The four commands shown above; <i>git init</i>, <i>git add</i>, <i>git status</i> and <i>git commit</i>  are, alongside <i>git config</i>, the commands you'll typically need in a workflow - if you're working locally.</p>	
 				</section>
 
 				<section>
-					<h2>There's still a lot to learn</h2>
+					<h3>There's still a lot to learn</h3>
 					<ul>
 						<li>Using git's built in tools to understand changelogs etc.</li>
 						<li>Connecting Git to networks and online services</li>
@@ -282,18 +282,18 @@ git commit -m "Add comment to .py-file for testing purposes"
 				</section>
 				<section>
 					<section>
-						<h2>Understand the repo</h2>
+						<h3>Understand the repo</h3>
 						<p>Git provides a set of tools to analyse the work you've done so far</p>
 						<p>These tools are useful to some - whilst others prefer to inspect their work using e.g. <a href="github.com">github.com</a></p> 	
 					</section>
 					<section>
-						<h2>Understand the repo</h2>
+						<h3>Understand the repo</h3>
 						<p>Git stamps each commit with an ID</p>
 						<p>A Git commit ID is actually a <b>SHA-1 hash</b> that contains important information about the contents of the file, commit date, user, etc.</p>
 						<p>We're not going to use this - but there's meaningful information in the ID</p>
 					</section>
 					<section>
-						<h2>Understand the repo </h2>
+						<h3>Understand the repo </h3>
 						<p>You can have the repo 'history' presented with <i>git log</i></p>
 						<pre><code class="hljs" data-trim contenteditable>
 git log
@@ -304,9 +304,33 @@ git log --oneline
 						<p><small>This will present all previous <i>commits</i> by their ID, date, user and <i>commit</i> message</small></p>
 						<p><small>Adding the  '--oneline' flag compacts the information presented</small></p>
 					</section>
+					<section>
+						<h3>Understand the repo</h3>
+						<p>You can also have Git show the differences between commits</p >
+						<p>This is especially handy when you can't remember what you did a week ago or when collaborating with others</p>
+					</section>
+					<section>
+						<h3>Understand the repo</h3>
+						<p>You can check what has changed in the current commit compared to a particular one</p>
+						<pre><code class="hljs" data-trim contenteditable>
+git diff [commit-id]
+						</code></pre>
+					</section>
+					<section>
+						<h3>Let's see that in action</h3>
+						<p>Note; I've made some arbitrary <i>commits</i> since we last saw a screenshot</p>
+						<img src="images/0-log.png", style="border: 0;">
+						<hr>
+						<p><small>The last thing i did was to create a for-loop in commit <i>5ed17aa</i></small></p>
+					</section>
+					<section>
+						<p>Let's inspect what happened since the latest commit and the previous</p>
+						<img src="images/1-log.png", style="border: 0;">
+						<hr>
+						<p><small>In this commit, I deleted a line i <b>1-i.py</b>, marked with <font color="red">- and red</font></small></p>
+						<p><small>I also added 5 lines of generic python code, marked with <font color="green">+ and green</font></small></p>
+					</section>
 				</section>
-
-
 
 				<section data-background="https://media.giphy.com/media/X144Ov9UbFUZO/giphy.gif">
 					<br><br><br>
