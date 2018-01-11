@@ -12,7 +12,7 @@ Slideshow can be found at [my gh-pages](https://adamingwersen.github.io/git-intr
  * CI/CD with GitHub/GitLab + section on .yml format
  * Signing and security
  * Tips/tricks
- * Exercises'
+ * Exercises
  * Conclusion
 
 ### Want a pdf?
