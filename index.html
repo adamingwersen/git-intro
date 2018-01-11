@@ -491,19 +491,83 @@ git pull
 					<h1>MERGE CONFLICTS</h1>
 				</section>
 				<section>
-					<h2>Merge conflicts</h2>
-					<p>A <i>merge conflict</i> can occur when commits are unaligned - unsynchronized</p>
-					<p>They only occur if there's a conflict about the contents of the same line</p>
-					<p>A <i>merge conflict</i> can happen even when you're not collaborating, but working on multiple <i>branches</i></p>
-					<hr>
-					<p><small>More on <i>branches</i> later</small></p>
+					<section>
+						<h2>Merge conflicts</h2>
+						<p>A <i>merge conflict</i> can occur when commits are unaligned - unsynchronized</p>
+						<p>They only occur if there's a conflict about the contents of the same line</p>
+						<p>A <i>merge conflict</i> can happen even when you're not collaborating, but working on multiple <i>branches</i></p>
+						<hr>
+						<p><small>More on <i>branches</i> later, as for now, think of them as two different users</small></p>
+					</section>
+					<section>
+						<h2>Let's see that in action</h2>
+						<p>I've purposely created a merge-conflict, by doing different things on the same line</p>
+						<p>On a <i>branch</i>, <b>dev</b>, where the print statement i <b>1-i.py</b> differs</p>
+						<p>I now try to <i>merge</i> the <i>branch</i> <b>master</b> with <b>dev</b></p>
+					 		<pre><code class="hljs" data-trim contenteditable>
+git merge [branch]
+							</code></pre>
+					</section>
+					<section>
+						<p>Trying to <i>merge</i> <b>master</b> with <b>dev</b> yields the following error message</p>
+						<img src="images/mergeconflict.png", style="border: 0;">
+					</section>
+					<section>
+						<p>Resolving a <i>merge conflict</i> can often be done by Git automagically</p>
+						<p>In cases, where Git cannot resolve them, you have to edit the script, and choose which lines to keep</p>
+						<p>You do this by opening the file and modifying it</p>
+					</section>
+					<section>
+						<p>Opening the file, where the <i>merge conflict</i> is stated</p>
+						<img src="images/mergeconflict2.png", style="border: 0;">
+					</section>
+					<section>
+						<p>Note the <i>HEAD</i> and <i>dev</i> at each end of the conflict</p>
+						<p>Any lines after <i>HEAD</i> and before <i>=======</i> are the code segments from the <i>master branch</i></p>
+						<p>Any lines after <i>=======</i> and befire <i>dev</i>, are the code segments from the <i>dev branch</i></p>
+						<p>Now, the user has to determine, which <i>commit</i> is the right one</p>
+					</section>
+					<section>
+						<p>Let's say, the <i>dev branch</i> is the right one</p>
+						<p>We then edit out the <i>conflict</i> the highlighted text</p>
+						<img src="images/mergeresolve.png", style="border: 0;">
+					</section>
+					<section>
+						<p>We're left with the following</p>
+						<img src="images/mergesolve.png", style="border: 0;">
+					</section>
+					<section>
+						<p>Save the file, <i>add</i> and <i>commit</i> - the <i>merge conflict</i> is now resolved</p>
+						<img src="images/finalsolve.png", style="border: 0;">
+						<hr>
+						<p><small>Remember to write a fitting <i>commit</i> message. So others may understand why the conflict occured, and how it was solved</small></p>
+					</section>
 				</section>
-				<section>
 
+				<section>
+					<p>As you probably noted, I talked about <i>branches</i> in the previous slides</p>
+					<p>You may sometimes want to try out something, that shouldn't go into <b>production</b> until refined</p>
+					<p>For this, <i>branches</i> are great</p>
+					<p>They allow you to take all files of a repository and alter them, try them out in isolation of the main project</p>
+					<p>Whenever the features are fully developed you <i>merge</i> the <b>development</b> <i>branch</i> onto e.g. <b>master</b></p>
 				</section>
-				<section data-transition="concave" data-background="#4d7e65", data-background-transition="zoom">
+		
+				<section data-transition="concave" data-background-transition="zoom">
 				 <h3>Git branches</h3>
-				 <img src="images/branching.png", style="border: 0;">
+				 <img src="images/branching2.png", style="border: 0;">
+				</section>
+
+				<section>
+					<section>
+						<h2>Wanna branch out?</h2>
+						<p>You wanna try to build a new feature or alter the existing code, but don't want to mess with the existing repository</P>
+						<p>The workflow presented below will allow you to do this</p>
+					</section>
+					<section>
+						<h2>Git branches</h2>
+						<p>When initializing a new repository, the default <i>branch</i> is <b>master</b></p>
+						<p>If you wish to create a new <i>branch</i>, you use the <i>checkout</i> command</p>
+					</section>
 				</section>
 					
 
