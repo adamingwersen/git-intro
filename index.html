@@ -586,6 +586,22 @@ git branch
 						<p>Switching from e.g. <b>master</b> to <b>dev</b> can be accomplished with <i>git checkout</i> like so</p>
 						<img src="images/gitcheckoutez.png", style="border: 0;">
 					</section>
+					<section>
+						<h2>Adding remote branches</h2>
+						<p>Say you have successfully developed the feature on your new branch</p>
+						<p>You're not sure whether or not the changes should be implemented though</p>
+						<p>You need your colleague to see the feature for evaluation before <i>merging</i> onto master</p>
+						<p>You can <i>push</i> the new <i>branch</i> to a <i>remote repository</i>
+					</section>
+					<section>
+						<h2>Push to new remote branch</h2>
+						<p>You can <i>push</i> <i>commited</i> changes on a new <i>branch</i> to your <i>remote git repo</i></p>
+					 		<pre><code class="hljs" data-trim contenteditable>
+git push -u origin [branch-name]
+							</code></pre>
+						<hr>
+						<p><small>The <i>branch</i> will automagically be created on the <i>remote repo</i></small></p>
+					</section>
 				</section>
 					
 
