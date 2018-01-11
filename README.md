@@ -10,6 +10,7 @@ Slideshow can be found at [my gh-pages](https://adamingwersen.github.io/git-intr
  * Workflow using branches + stashing
  * Tagging
  * CI/CD with GitHub/GitLab + section on .yml format
+ * Signing and security
  * Tips/tricks
  * Exercises'
  * Conclusion
