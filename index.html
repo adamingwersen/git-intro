@@ -602,6 +602,19 @@ git push -u origin [branch-name]
 						<hr>
 						<p><small>The <i>branch</i> will automagically be created on the <i>remote repo</i></small></p>
 					</section>
+					<section>
+						<h2>Merge onto master</h2>
+						<p>So, your colleague loved the addition on the <b>new branch</b>. Better get it onto <b>master</b> then</p>
+						<p>Make sure you have <i>commited</i> latest changes to <b>new branch</b> before switching to <b>master</b>
+					 		<pre><code class="hljs" data-trim contenteditable>
+//On new branch
+git add .
+git commit -m 'Change while-loop to recursion for 10% better performance'
+git checkout master
+git merge [new-branch]
+git push
+							</code></pre>
+					</section>
 				</section>
 					
 
