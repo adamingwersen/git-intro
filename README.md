@@ -5,9 +5,9 @@
 Slideshow can be found at [my gh-pages](https://adamingwersen.github.io/git-intro/index)
 
 ### TODO
- * Git merge
- * Branching
- * Workflow using branches + stashing
+ * <strike>Git merge</strike>
+ * <strike>Branching</strike>
+ * <strike>Workflow using branches + stashing</strike>
  * Tagging
  * CI/CD with GitHub/GitLab + section on .yml format
  * Signing and security
